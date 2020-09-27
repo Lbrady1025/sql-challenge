@@ -7,3 +7,9 @@ SELECT employees.first_name, employees.last_name, employees.hire_date
 FROM employees
 WHERE employees.hire_date LIKE '%1986';
 
+SELECT dept_manager.dept_no, departments.dept_name, dept_manager.emp_no, employees.last_name, employees.first_name
+FROM dept_manager
+LEFT JOIN departments
+ON dept_manager.dept_no = departments.dept_no
+LEFT JOIN employees
+ON dept_manager.emp_no = employees.emp_no;
